@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "246846174429",
+    "project_id": "simple-book-shop",
+    "storage_bucket": "simple-book-shop.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246846174429:android:4fdb20e9e1118f61dd9734",
+        "android_client_info": {
+          "package_name": "com.example.simple_book_shop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD353UTteU250Xr86RpgoH9nfcIpAj3_C8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
