@@ -20,6 +20,7 @@ dependencies:
   flex_color_scheme: ^7.3.1
   google_fonts: ^6.2.1
   cloud_firestore: ^4.17.4
+  flutter_bloc: ^8.1.5
 
 dev_dependencies:
   flutter_test:
