@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 import 'package:simple_book_shop/model/book.dart';
 import 'package:simple_book_shop/service/firestore_sevice.dart';
@@ -16,7 +17,7 @@ class CatalogBloc extends Bloc<CatalogEvent, CatalogState> {
         final books = await _firestoreService.getBooks().first;
         emit(CatalogLoaded(books));
       } catch (e) {
-        emit(CatalogError('Ошибка загрузки каталога.'));
+        emit(const CatalogError('Ошибка загрузки каталога.'));
       }
     });
   }

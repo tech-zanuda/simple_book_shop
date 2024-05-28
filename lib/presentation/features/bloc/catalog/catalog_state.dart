@@ -1,20 +1,31 @@
 part of 'catalog_bloc.dart';
 
 @immutable
-abstract class CatalogState {}
+abstract class CatalogState extends Equatable {
+  const CatalogState();
 
-final class CatalogInitial extends CatalogState {}
+  @override
+  List<Object> get props => [];
+}
+
+class CatalogInitial extends CatalogState {}
 
 class CatalogLoading extends CatalogState {}
 
 class CatalogLoaded extends CatalogState {
   final List<Book> books;
 
-  CatalogLoaded(this.books);
+  const CatalogLoaded(this.books);
+
+  @override
+  List<Object> get props => [books];
 }
 
 class CatalogError extends CatalogState {
   final String errorMessage;
 
-  CatalogError(this.errorMessage);
+  const CatalogError(this.errorMessage);
+
+  @override
+  List<Object> get props => [errorMessage];
 }
