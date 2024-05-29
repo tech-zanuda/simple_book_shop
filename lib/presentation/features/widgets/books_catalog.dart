@@ -2,6 +2,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_ui_storage/firebase_ui_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_book_shop/model/book.dart';
+import 'package:simple_book_shop/presentation/features/screens/book_screen.dart';
 
 class BooksCatalog extends StatelessWidget {
   const BooksCatalog({
@@ -28,12 +29,18 @@ class BooksCatalog extends StatelessWidget {
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  StorageImage(
-                    ref: FirebaseStorage.instance
-                        .ref('books/${book.id}/cover.webp'),
-                    height: 280,
-                    alignment: Alignment.bottomCenter,
-                    loadingStateVariant: LoadingStateVariant.shimmer(),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => BookScreen(book: book)));
+                    },
+                    child: StorageImage(
+                      ref: FirebaseStorage.instance
+                          .ref('books/${book.id}/cover.webp'),
+                      height: 280,
+                      alignment: Alignment.bottomCenter,
+                      loadingStateVariant: LoadingStateVariant.shimmer(),
+                    ),
                   ),
                   const SizedBox(
                     height: 10,
